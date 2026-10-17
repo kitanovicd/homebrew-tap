@@ -17,9 +17,12 @@ class Blindspot < Formula
   end
 
   on_linux do
-    url "https://github.com/kitanovicd/blindspot/releases/download/v0.1.0/blindspot_linux_amd64.tar.gz"
-    sha256 "8d7ef2f401738cbd5dc24d454515ec2cbf7112fcf672edcb68e1115bde5412eb"
     depends_on arch: :x86_64
+
+    on_intel do
+      url "https://github.com/kitanovicd/blindspot/releases/download/v0.1.0/blindspot_linux_amd64.tar.gz"
+      sha256 "8d7ef2f401738cbd5dc24d454515ec2cbf7112fcf672edcb68e1115bde5412eb"
+    end
   end
 
   def install

@@ -33,9 +33,13 @@ def main():
         checksums[filename] = checksum
 
     path = Path(__file__).resolve().parents[1] / "Formula" / "blindspot.rb"
-    text, count = re.subn(r'  version "[^"]+"', f'  version "{version[1:]}"', path.read_text())
+    original = path.read_text()
+    text, count = re.subn(r'  version "[^"]+"', f'  version "{version[1:]}"', original)
     if count != 1:
         raise ValueError("expected one formula version")
+    if text != original:
+        # Bottles are version-specific; the publishing workflow builds replacements.
+        text = re.sub(r"\n  bottle do\n.*?\n  end\n", "", text, flags=re.DOTALL)
     for platform in ("darwin_arm64", "darwin_amd64", "linux_amd64"):
         filename = f"blindspot_{platform}.tar.gz"
         checksum = checksums[filename]

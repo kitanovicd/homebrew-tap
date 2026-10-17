@@ -38,4 +38,12 @@ After publishing a Blindspot release, update its version and checksums from the 
 python3 scripts/update.py v0.1.0
 ```
 
-Review and push the formula change, then verify it with `brew update`, `brew upgrade blindspot`, and `blindspot version`. The updater only accepts stable version tags and checks every platform checksum against GitHub's asset digest.
+The updater only accepts stable version tags and checks every platform checksum against GitHub's asset digest. It removes old bottle metadata when the version changes.
+
+Review, commit, and push the formula change, then run **Publish bottles** in GitHub Actions with the same version, or use:
+
+```sh
+gh workflow run bottles.yml -f version=v0.1.0
+```
+
+The workflow packages the verified binary on macOS Apple Silicon, macOS Intel, and Linux x86-64. It publishes Homebrew bottles and commits their checksums to the formula. Bottles let users install without a local build step. Verify the published package with `brew update`, `brew upgrade blindspot`, and `blindspot version`.
