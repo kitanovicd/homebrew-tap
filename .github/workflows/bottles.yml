@@ -46,7 +46,7 @@ jobs:
           brew style --formula kitanovicd/tap/blindspot
       - name: Build and verify bottle
         run: |
-          brew install --build-bottle --build-from-source kitanovicd/tap/blindspot
+          brew install --build-bottle kitanovicd/tap/blindspot
           blindspot --version | grep -F "blindspot $VERSION "
           blindspot --help
           brew bottle --json --no-rebuild \
