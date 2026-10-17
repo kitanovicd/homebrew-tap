@@ -4,6 +4,13 @@ class Blindspot < Formula
   version "0.1.0"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/kitanovicd/homebrew-tap/releases/download/v0.1.0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd54d917b52840d1eb68b84c6550b8f3d157efd5891eb5f0c0cbdfb3bb886229"
+    sha256 cellar: :any_skip_relocation, sequoia:       "da6f8231e96c773e6dc687e02720ae7453e9a454093d843bdfedfbfb5f4f64dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f206539f6a88e06b0863850ee36ac222eee1cd04e0bec7de750a48df35afde2c"
+  end
+
   on_macos do
     on_arm do
       url "https://github.com/kitanovicd/blindspot/releases/download/v0.1.0/blindspot_darwin_arm64.tar.gz"
