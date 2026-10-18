@@ -16,6 +16,8 @@ blindspot
 
 Choose to run mutation tests, free up disk space, or browse saved reports. Guided runs ask for your project and setup commands, and whether to keep replay files. Gambit is installed automatically when needed. For an already prepared project, use `blindspot run --limit 5 --open`.
 
+Runs, reports, settings, and new managed tools are stored in `~/.blindspot/`. The report browser and cleanup command only use that folder; they do not scan personal or project directories.
+
 To update:
 
 ```sh
