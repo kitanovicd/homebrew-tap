@@ -4,16 +4,17 @@ Install [Blindspot](https://github.com/kitanovicd/blindspot), a mutation coverag
 
 ```sh
 brew install kitanovicd/tap/blindspot
-blindspot setup
 ```
 
 Requires [Foundry](https://getfoundry.sh/) (`forge` on your PATH). Supports macOS Apple Silicon/Intel and Linux x86-64. Homebrew verifies and installs the published binary, so Go is not required.
 
-From a Foundry project:
+Start guided setup:
 
 ```sh
-blindspot run --limit 5 --open
+blindspot
 ```
+
+It asks for your project path and the commands to install dependencies, build, and test. Gambit is installed automatically when needed. For an already prepared project, use `blindspot run --limit 5 --open`.
 
 To update:
 
