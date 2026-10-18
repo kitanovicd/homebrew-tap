@@ -8,13 +8,13 @@ brew install kitanovicd/tap/blindspot
 
 Requires [Foundry](https://getfoundry.sh/) (`forge` on your PATH). Supports macOS Apple Silicon/Intel and Linux x86-64. Homebrew verifies and installs the published binary, so Go is not required.
 
-Start guided setup:
+Open the menu:
 
 ```sh
 blindspot
 ```
 
-It asks for your project path and the commands to install dependencies, build, and test. Gambit is installed automatically when needed. For an already prepared project, use `blindspot run --limit 5 --open`.
+Choose to run mutation tests, free up disk space, or browse saved reports. Guided runs ask for your project and setup commands, and whether to keep replay files. Gambit is installed automatically when needed. For an already prepared project, use `blindspot run --limit 5 --open`.
 
 To update:
 

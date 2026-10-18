@@ -1,25 +1,18 @@
 class Blindspot < Formula
   desc "Find gaps in Foundry tests with Solidity mutation testing"
   homepage "https://github.com/kitanovicd/blindspot"
-  version "0.2.1"
+  version "0.3.0"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/kitanovicd/homebrew-tap/releases/download/v0.2.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71da4a39469fa5500817daa50a2414668c47b343d9f6a1332f7b3b0f88a58379"
-    sha256 cellar: :any_skip_relocation, sequoia:       "3258c04d5534f918fc33ec4a8e726997f1a93776fc5b95c9acf2c0b90add3742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fb3dd5f699672ed715aa492bf5fd3253bae9fe68c70f0814a81976f44149716"
-  end
 
   on_macos do
     on_arm do
-      url "https://github.com/kitanovicd/blindspot/releases/download/v0.2.1/blindspot_darwin_arm64.tar.gz"
-      sha256 "5f3a796f4dc544ac82ee6df22f15ff0a4b3e7abbb867473cf57fe09f0b565cfa"
+      url "https://github.com/kitanovicd/blindspot/releases/download/v0.3.0/blindspot_darwin_arm64.tar.gz"
+      sha256 "725d87d658d9d3fe6d0cebe80c4451927508b75a8400ca6aa0580e45e6e470c3"
     end
 
     on_intel do
-      url "https://github.com/kitanovicd/blindspot/releases/download/v0.2.1/blindspot_darwin_amd64.tar.gz"
-      sha256 "aacbb9a95bbd73452f4255ba7e103bacafb1418625a9151eeb4c2cf2534c2dd2"
+      url "https://github.com/kitanovicd/blindspot/releases/download/v0.3.0/blindspot_darwin_amd64.tar.gz"
+      sha256 "2edab06f09b20dfa48daba6a48e118755649fe758a471c5f2618f659e0615673"
     end
   end
 
@@ -27,8 +20,8 @@ class Blindspot < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/kitanovicd/blindspot/releases/download/v0.2.1/blindspot_linux_amd64.tar.gz"
-      sha256 "e95ed6abc7cca2bc82e301ccaa03d232d32941cded2ba2a7af1434a868132169"
+      url "https://github.com/kitanovicd/blindspot/releases/download/v0.3.0/blindspot_linux_amd64.tar.gz"
+      sha256 "c106ee9529e3be1f33e2521151fb7ca3acb20aa54c9a934c111ad518869a8cff"
     end
   end
 
@@ -41,10 +34,10 @@ class Blindspot < Formula
     <<~EOS
       Requires Foundry (forge) on your PATH.
 
-      Start guided setup:
+      Open the menu:
         blindspot
 
-      It asks for your project and install, build, and test commands.
+      Run mutation tests, free up space, or browse saved reports.
     EOS
   end
 end
